@@ -37,8 +37,9 @@ To display the poster in the skin's Infobar 1 and 2, as well as in the Channel S
 🔗 Contact me:
 .............................................................
 
-📢 Telegram ID: @Youchie
-📢 Telegram Channel: Smartcam_1
+📢 Telegram ID: [@Youchie](https://t.me/Youchie)
+📢 Telegram Channel: [Smartcam_1](https://t.me/Smartcam_1)
+
 
 For more screenshots, please refer to the [Screenshots folder](https://github.com/smcam/enigma2/tree/main/ScreenShot):
 
