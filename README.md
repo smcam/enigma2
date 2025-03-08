@@ -38,6 +38,7 @@ To display the poster in the skin's Infobar 1 and 2, as well as in the Channel S
 .............................................................
 
 📢 Telegram ID: [@Youchie](https://t.me/Youchie)
+
 📢 Telegram Channel: [Smartcam_1](https://t.me/Smartcam_1)
 
 
