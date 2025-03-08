@@ -36,8 +36,11 @@ Or
 To display the poster in the skin's Infobar 1 and 2, as well as in the Channel Select, go to the plugin menu and configure the poster display settings through the YouchieSettings plugin.
 
 .............................................................
+
 🔗 Contact me:
+
 .............................................................
+
 
 📢 Telegram ID: [@Youchie](https://t.me/Youchie)
 
