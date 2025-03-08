@@ -21,11 +21,11 @@ Download Releases v1.0.0
 2- Transfer it to /tmp/ via FTP.
 3- Run the following command in the terminal:
 
-opkg install /tmp/*.ipk
+`opkg install /tmp/*.ipk`
 
 Or
 
-opkg install --force-overwrite /tmp/*.ipk
+`opkg install --force-overwrite /tmp/*.ipk`
 
 4- Restart your receiver.
 
