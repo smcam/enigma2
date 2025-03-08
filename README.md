@@ -1,4 +1,4 @@
-# enigma2
+# enigma2 Skin For Vu+ Box's
 Skin Youchie-PLI-FHD, is an Enigma2 skin designed for Vu+ Box's running OpenPLI and OpenBH images.
 
 Download Releases v1.0.0
