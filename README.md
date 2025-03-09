@@ -64,7 +64,7 @@ For more screenshots, please refer to the [Screenshots folder](https://github.co
 
 ![Skin Screenshot](https://github.com/smcam/enigma2/blob/main/ScreenShot/01.jpg)
 
-![Skin Screenshot](https://github.com/smcam/enigma2/blob/main/ScreenShot/03.jpg)
+![Skin Screenshot](https://github.com/smcam/enigma2/blob/main/ScreenShot/23.jpg)
 
 ![Skin Screenshot](https://github.com/smcam/enigma2/blob/main/ScreenShot/10.jpg)
 
