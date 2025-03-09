@@ -39,7 +39,9 @@ Or
 
 To display the poster in the skin's Infobar 1 and 2, as well as in the Channel Select, go to the plugin menu and configure the poster display settings through the YouchieSettings plugin.
 
-To display provider picons, simply replace the Provider_icons file in the skin installation path at:
+.............................................................
+
+To display provider picons, simply replace the [Provider_icons](https://github.com/smcam/enigma2/blob/main/provider_icons.zip) file in the skin installation path at:
 
 `/usr/share/enigma2/Youchie-PLI-FHD/provider_icons`
 
