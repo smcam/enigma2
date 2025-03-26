@@ -27,10 +27,6 @@ Download Releases v1.0.0
 
 3- Run the following command in the terminal:
 
-`opkg install /tmp/*.ipk`
-
-Or
-
 `opkg install --force-overwrite /tmp/*.ipk`
 
 4- Restart your receiver.
