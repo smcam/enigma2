@@ -28,7 +28,7 @@ Changes:
 
 *Multistaker pro 
 
-- Fixed the issue with the highlight for channel switching.
+- Fixed the issue with the highlight for channel Moving in channel List.
 - Fixed Youchie Plugin error
 - Fixed Show tuner in infobar
 - And fixed some reported bugs...
