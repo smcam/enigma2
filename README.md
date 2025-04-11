@@ -11,7 +11,7 @@ Download Releases v1.0.2
 
 🚀 Skin Youchie-PLI-FHD v1.0.2 - For OpenPLI And OpenBH Image Vu+
 
-📅 Release Date: 2025-04-14
+📅 Release Date: 2025-04-11
 
 
 Changes:
