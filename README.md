@@ -1,37 +1,38 @@
 # enigma2 Skin For Vu+ Box's
 Skin Youchie-PLI-FHD, is an Enigma2 skin designed for Vu+ Box's running OpenPLI and OpenBH images.
 
-Download Releases v1.0.1
+Download Releases v1.0.2
 
       ::
       ::
       \/
       
-[Skin Youchie-PLI-FHD For OpenPLI And OpenBH Image Vu+ v1.0.1](https://github.com/smcam/enigma2/releases/tag/v1.0.1)
+[Skin Youchie-PLI-FHD For OpenPLI And OpenBH Image Vu+ v1.0.1](https://github.com/smcam/enigma2/releases/tag/v1.0.2)
 
-🚀 Skin Youchie-PLI-FHD v1.0.1 - For OpenPLI And OpenBH Image Vu+
+🚀 Skin Youchie-PLI-FHD v1.0.2 - For OpenPLI And OpenBH Image Vu+
 
-📅 Release Date: 2025-03-25
+📅 Release Date: 2025-04-14
 
 
 Changes:
 
-- Added icons for the following panels:
-  
-*Neoboot
+- Add Show One Big Poster Event_Now + 3 Event_next Poster' in First InfoBar, ON/OFF (YouchieSettings Skin Plugin).
+- Add Youchie Skin Settings to Mine Menu, ON/OFF (YouchieSettings Skin Plugin).
+- Add Delete All Save Poster Item in YouchieSettings Skin Plugin.
+- Add Linuxsat Panel Menu Icon .
+- Add E2iPlayer Menu Icon.
+- Add XKlass IPTV Plugin Menu Icon.
+- Add Jedi Maker Xtream Plugin Menu Icon.
+- Add Mount Manager OpenPLI Plugin Menu Icon.
+- Add Show Channels Number In Infobar, ON/OFF (YouchieSettings Skin Plugin).
+- Fixing the issue of OpenBH image not booting after removing the skin.
+- Fixing OpenBH Devices Manager template.
+- Fixing OpenBH Devices Mountpoints Setup Font Size.
+- Fixing Youtube TV Settings Screen .
+- Fixing Youtube TV Window Screen And Add Setting Blue key.
+- Slowing down the EPG display speed for long text entries in the SecondInfoBar and channel list EPG, in both Show poster and Not Show poster display modes.
+- Several small bug fixes based on users feedback.
 
-*Ipaudiopro
-
-*Ipaudio
-
-*Levi45 cam manager
-
-*Multistaker pro 
-
-- Fixed the issue with the highlight for channel Moving in channel List.
-- Fixed Youchie Plugin error
-- Fixed Show tuner in infobar
-- And fixed some reported bugs...
 
 ✨ Features of this version:
 

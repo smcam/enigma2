@@ -1,7 +1,7 @@
 <skin>
   <!-- *************************************************** -->
   <!-- Youchie-PLI-FHD Skin                                -->
-  <!-- version :v1.0.1                                     -->
+  <!-- version :v1.0.2                                     -->
   <!-- By Youchie                                          -->
   <!-- For OpenPLI v8.X v9.X                               -->
   <!-- For OpenBH v4.X v5.X                                -->
@@ -13,8 +13,8 @@
             Author="@Youchie"
 	    github="https://github.com/smcam/enigma2"
             Telegram ID="@Youchie"
-            Version="1.0.1"
-            Release date="26/03/2025"
+            Version="1.0.2"
+            Release date="06/04/2025"
             Telegram Support Channel="https://t.me/Smartcam_1"
         </abouth>
   </copyright>
@@ -109,6 +109,7 @@
     <font filename="/usr/share/enigma2/Youchie-PLI-FHD/fonts/Core_Bold.ttf" name="Core_B" scale="100" />
     <font filename="/usr/share/enigma2/Youchie-PLI-FHD/fonts/Core_Regular.ttf" name="Core_R" scale="100" />
     <font filename="/usr/share/enigma2/Youchie-PLI-FHD/fonts/RobotoCondensed-Italic.ttf" name="Regular_I" scale="100" />
+    <font filename="/usr/share/enigma2/Youchie-PLI-FHD/fonts/Youchietiny.ttf" name="YouchieTiny" scale="100" />
     <font name="LCD" filename="lcd.ttf" scale="100" />
     <font name="Console" filename="tuxtxt.ttf" scale="100" />
     <!-- Aliases -->
@@ -148,6 +149,7 @@
     <alias name="PiconManagerList" font="Regular" size="28" height="50" />
     <alias name="RSList" font="Regular" size="28" height="50" />
     <alias name="FcZipArchiver" font="Fixed" size="26" height="45" />
+    <alias name="ChannelSelection" font="YouchieTiny" size="28" height="38" />
   </fonts>
   <parameters>
     <parameter name="ConfigListSlider" value="22,3" />
@@ -355,12 +357,12 @@
     <ePixmap pixmap="Youchie-PLI-FHD/buttons/arow.png" position="1025,269" size="150,150" alphatest="blend" />
   </screen>
   <screen name="list_M2" position="0,0" size="1920,1080" title="Channel Selection" backgroundColor="transparent" flags="wfNoBorder">
-    <widget source="Title" render="Label" position="28,11" size="850,64" font="Core_B; 36" backgroundColor="black" transparent="1" foregroundColor="orange" valign="bottom" zPosition="1" halign="left" />
+    <widget source="Title" render="Label" position="16,-1" size="920,93" font="Core_B; 35" backgroundColor="black" transparent="1" foregroundColor="orange" valign="bottom" zPosition="1" halign="left" />
     <widget source="session.VideoPicture" render="Pig" position="1384,86" zPosition="5" size="518,292" backgroundColor="transparent" transparent="0" />
-    <widget source="session.CurrentService" render="Label" position="1371,42" size="543,45" font="Roboto; 28" borderWidth="1" backgroundColor="black" transparent="1" halign="center" foregroundColor="saric" zPosition="5" valign="top" noWrap="1">
+    <widget source="session.CurrentService" render="Label" position="1369,42" size="543,45" font="Roboto; 28" borderWidth="1" backgroundColor="black" transparent="1" halign="center" foregroundColor="saric" zPosition="5" valign="top" noWrap="1">
       <convert type="ServiceName">Name</convert>
     </widget>
-    <widget name="list" position="28,99" size="792,887" colorAdditionalInfo="green" colorAdditionalInfoSelected="hellgreen" foregroundColorServiceNotAvail="green" colorServiceDescription="green" colorServiceDescriptionSelected="sky" foregroundColor="white" foregroundColorSelected="orange" serviceItemHeight="45" serviceNumberFont="tiny;27" serviceNameFont="tiny;26" serviceInfoFont="Regular_I;23" colorEventProgressbarBorderSelected="cyan1" colorEventProgressbarBorder="cyan1" picServiceEventProgressbar="Youchie-PLI-FHD/chnsel/pl.png" selectionPixmap="Youchie-PLI-FHD/selections/listsel930.png" zPosition="4" transparent="1" backgroundColor="background" halign="block" progressPercentWidth="40" scrollbarMode="showOnDemand" scrollbarBackgroundPicture="Youchie-PLI-FHD/frame/scrollbar_bg.png" scrollbarWidth="7" scrollbarSliderBorderWidth="0" scrollbarKeepGapColor="1" scrollbarGap="5" scrollbarSliderForegroundColor="orange" scrollbarSliderBorderColor="background" fieldMargins="15" nonplayableMargins="15" progressbarHeight="6" progressBarWidth="60" progressbarBorderWidth="1" backgroundColorMarked="background" textSeparator="  •  " markerLine="1" markerTextAlignment="center" markerLineColor="sky" itemCornerRadius="10" />
+    <widget name="list" position="28,112" size="792,874" colorAdditionalInfo="green" colorAdditionalInfoSelected="hellgreen" foregroundColorServiceNotAvail="green" colorServiceDescription="green" colorServiceDescriptionSelected="sky" foregroundColor="white" foregroundColorSelected="orange" serviceItemHeight="45" serviceNumberFont="Youchietiny;27" serviceNameFont="Youchietiny;26" serviceInfoFont="Regular_I;23" colorEventProgressbarBorderSelected="cyan1" colorEventProgressbarBorder="cyan1" picServiceEventProgressbar="Youchie-PLI-FHD/chnsel/pl.png" selectionPixmap="Youchie-PLI-FHD/selections/listsel930.png" zPosition="4" transparent="1" backgroundColor="background" halign="block" progressPercentWidth="40" scrollbarMode="showOnDemand" scrollbarBackgroundPicture="Youchie-PLI-FHD/frame/scrollbar_bg.png" scrollbarWidth="7" scrollbarSliderBorderWidth="0" scrollbarKeepGapColor="1" scrollbarGap="5" scrollbarSliderForegroundColor="orange" scrollbarSliderBorderColor="background" fieldMargins="15" nonplayableMargins="15" progressbarHeight="6" progressBarWidth="60" progressbarBorderWidth="1" backgroundColorMarked="background" textSeparator="  •  " markerLine="1" markerTextAlignment="center" markerLineColor="sky" itemCornerRadius="10" />
     <widget source="ServiceEvent" render="Picon" position="842,121" size="150,90" transparent="1" alphatest="blend" zPosition="10">
       <convert type="ServiceName">Reference</convert>
     </widget>
@@ -393,22 +395,22 @@
     <widget source="session.CurrentService" render="Label" position="1717,575" size="190,37" borderWidth="1" text="192.168.154.121" font="Roboto; 22" zPosition="3" backgroundColor="black" transparent="1" halign="center" noWrap="1" foregroundColor="CadetBlue2" valign="center">
       <convert type="YouchieTemp">Iplocal</convert>
     </widget>
-    <widget source="session.CurrentService" render="Pixmap" pixmap="Youchie-PLI-FHD/infobar/ico_format_hd.png" position="1608,16" size="58,26" zPosition="20" alphatest="blend" transparent="1">
+    <widget source="session.CurrentService" render="Pixmap" pixmap="Youchie-PLI-FHD/infobar/ico_format_hd.png" position="1611,16" size="58,26" zPosition="20" alphatest="blend" transparent="1">
       <convert type="ServiceInfo">VideoHeight</convert>
       <convert type="ValueRange">720,1079</convert>
       <convert type="ConditionalShowHide" />
     </widget>
-    <widget source="session.CurrentService" render="Pixmap" pixmap="Youchie-PLI-FHD/infobar/ico_format_fhd.png" position="1608,16" size="58,26" zPosition="20" alphatest="blend">
+    <widget source="session.CurrentService" render="Pixmap" pixmap="Youchie-PLI-FHD/infobar/ico_format_fhd.png" position="1611,16" size="58,26" zPosition="20" alphatest="blend">
       <convert type="ServiceInfo">VideoHeight</convert>
       <convert type="ValueRange">1080,1920</convert>
       <convert type="ConditionalShowHide" />
     </widget>
-    <widget source="session.CurrentService" render="Pixmap" pixmap="Youchie-PLI-FHD/infobar/ico_format_sd.png" position="1608,16" size="58,26" zPosition="20" alphatest="blend">
+    <widget source="session.CurrentService" render="Pixmap" pixmap="Youchie-PLI-FHD/infobar/ico_format_sd.png" position="1611,16" size="58,26" zPosition="20" alphatest="blend">
       <convert type="ServiceInfo">VideoHeight</convert>
       <convert type="ValueRange">0,719</convert>
       <convert type="ConditionalShowHide" />
     </widget>
-    <widget source="session.CurrentService" render="Pixmap" pixmap="Youchie-PLI-FHD/infobar/ico_format_4k.png" position="1608,16" size="58,26" zPosition="20" alphatest="blend">
+    <widget source="session.CurrentService" render="Pixmap" pixmap="Youchie-PLI-FHD/infobar/ico_format_4k.png" position="1611,16" size="58,26" zPosition="20" alphatest="blend">
       <convert type="ServiceInfo">VideoHeight</convert>
       <convert type="ValueRange">1981,3840</convert>
       <convert type="ConditionalShowHide" />
@@ -469,18 +471,18 @@
     <widget source="session.Event_Now" render="YouchiePoster" position="27,140" size="266,355" cornerRadius="10" borderWidth="0" borderColor="transparent" zPosition="10" alphatest="blend" transparent="1" />
     <ePixmap pixmap="Youchie-PLI-FHD/screens/Poster_not_available.png" position="1627,140" size="266,355" cornerRadius="10" zPosition="1" alphatest="blend" />
     <widget source="session.Event_Next" render="YouchiePoster" nexts="1" position="1627,140" size="266,355" cornerRadius="10" borderWidth="0" borderColor="transparent" zPosition="10" alphatest="blend" transparent="1" />
-    <widget source="session.Event_Now" render="YouchiePLIRun" options="movetype=running,startpoint=0,direction=top,steptime=1,repeat=2,startdelay=500,wrap,oneshot=1,always=0" position="291,140" size="628,355" halign="right" font="Regular; 27" transparent="1" backgroundColor="black" valign="top" zPosition="1" foregroundColor="unb2e0b4">
+    <widget source="session.Event_Now" render="YouchiePLIRun" options="movetype=running,startpoint=0,direction=top,steptime=100,repeat=3,startdelay=500,wrap,oneshot=1,always=0" position="291,140" size="628,355" halign="right" font="Regular; 27" transparent="1" backgroundColor="black" valign="top" zPosition="1" foregroundColor="unb2e0b4">
       <convert type="EventName">FullDescription</convert>
     </widget>
-    <widget source="session.Event_Next" render="YouchiePLIRun" options="movetype=running,startpoint=0,direction=top,steptime=1,repeat=2,startdelay=500,wrap,oneshot=1,always=0" position="996,140" size="628,355" halign="right" font="Regular; 27" transparent="1" backgroundColor="black" valign="top" zPosition="1" foregroundColor="un99bad6">
+    <widget source="session.Event_Next" render="YouchiePLIRun" options="movetype=running,startpoint=0,direction=top,steptime=100,repeat=3,startdelay=500,wrap,oneshot=1,always=0" position="996,140" size="628,355" halign="right" font="Regular; 27" transparent="1" backgroundColor="black" valign="top" zPosition="1" foregroundColor="un99bad6">
       <convert type="EventName">FullDescription</convert>
     </widget>
   </screen>
   <screen name="epginfo2" flags="wfNoBorder" size="1920,1081" transparent="1">
-    <widget source="session.Event_Now" render="YouchiePLIRun" options="movetype=running,startpoint=0,direction=top,steptime=1,repeat=2,startdelay=500,wrap,oneshot=1,always=0" position="28,140" size="890,355" halign="right" font="Regular; 27" transparent="1" backgroundColor="black" valign="top" zPosition="1" foregroundColor="unb2e0b4">
+    <widget source="session.Event_Now" render="YouchiePLIRun" options="movetype=running,startpoint=0,direction=top,steptime=100,repeat=3,startdelay=500,wrap,oneshot=1,always=0" position="28,140" size="890,355" halign="right" font="Regular; 27" transparent="1" backgroundColor="black" valign="top" zPosition="1" foregroundColor="unb2e0b4">
       <convert type="EventName">FullDescription</convert>
     </widget>
-    <widget source="session.Event_Next" render="YouchiePLIRun" options="movetype=running,startpoint=0,direction=top,steptime=1,repeat=2,startdelay=500,wrap,oneshot=1,always=0" position="999,140" size="890,355" halign="right" font="Regular; 27" transparent="1" backgroundColor="black" valign="top" zPosition="1" foregroundColor="un99bad6">
+    <widget source="session.Event_Next" render="YouchiePLIRun" options="movetype=running,startpoint=0,direction=top,steptime=100,repeat=3,startdelay=500,wrap,oneshot=1,always=0" position="999,140" size="890,355" halign="right" font="Regular; 27" transparent="1" backgroundColor="black" valign="top" zPosition="1" foregroundColor="un99bad6">
       <convert type="EventName">FullDescription</convert>
     </widget>
   </screen>
@@ -507,24 +509,24 @@
     <widget position="1378,443" size="538,41" source="ServiceEvent" render="YouchiePLITP" font="Regular; 26" halign="center" valign="center" noWrap="1" backgroundColor="black" zPosition="3" transparent="1" foregroundColor="sky" />
     <ePixmap pixmap="Youchie-PLI-FHD/buttons/key_exit.png" position="1292,578" size="52,37" alphatest="blend" />
     <ePixmap pixmap="Youchie-PLI-FHD/buttons/arow.png" position="1165,430" size="150,150" alphatest="blend" />
-    <widget source="ServiceEvent" render="YouchiePLIRun" options="movetype=running,startpoint=0,direction=top,steptime=1,repeat=2,startdelay=500,wrap,oneshot=1,always=0" position="1391,634" size="511,142" font="Regular;20" backgroundColor="black" transparent="1" halign="right" valign="top" foregroundColor="sky">
+    <widget source="ServiceEvent" render="YouchiePLIRun" options="movetype=running,startpoint=0,direction=top,steptime=100,repeat=5,startdelay=500,wrap,oneshot=1,always=0" position="1391,634" size="511,142" font="Regular;20" backgroundColor="black" transparent="1" halign="right" valign="top" foregroundColor="sky">
       <convert type="EventName">FullDescription</convert>
     </widget>
     <widget source="ServiceEvent" render="YouchiePoster" position="834,233" size="275,380" cornerRadius="15" borderWidth="0" borderColor="transparent" zPosition="10" alphatest="blend" transparent="1" />
     <widget source="ServiceEvent" render="YouchiePoster" nexts="1" position="848,777" size="171,228" cornerRadius="10" borderWidth="0" borderColor="transparent" zPosition="10" alphatest="blend" transparent="1" />
     <ePixmap pixmap="Youchie-PLI-FHD/screens/Poster_not_available_s.png" position="1019,777" size="171,228" cornerRadius="15" zPosition="1" alphatest="blend" />
     <ePixmap pixmap="Youchie-PLI-FHD/screens/Poster_not_available_s.png" position="1563,777" size="171,228" cornerRadius="15" zPosition="1" alphatest="blend" />
-    <widget source="ServiceEvent" render="YouchiePoster" nexts="4" position="1190,777" size="171,228" cornerRadius="15" borderWidth="0" borderColor="transparent" zPosition="10" alphatest="blend" transparent="1" />
-    <widget source="ServiceEvent" render="YouchiePoster" nexts="5" position="1392,777" size="171,228" cornerRadius="15" borderWidth="0" borderColor="transparent" zPosition="9" alphatest="blend" transparent="1" />
+    <widget source="ServiceEvent" render="YouchiePoster" nexts="3" position="1190,778" size="171,228" cornerRadius="15" borderWidth="0" borderColor="transparent" zPosition="10" alphatest="blend" transparent="1" />
+    <widget source="ServiceEvent" render="YouchiePoster" nexts="4" position="1392,777" size="171,228" cornerRadius="15" borderWidth="0" borderColor="transparent" zPosition="9" alphatest="blend" transparent="1" />
     <ePixmap pixmap="Youchie-PLI-FHD/screens/Poster_not_available_5.png" position="834,233" size="275,380" cornerRadius="15" zPosition="1" alphatest="blend" />
-    <widget source="ServiceEvent" render="YouchiePoster" nexts="3" position="1019,777" size="171,228" cornerRadius="15" borderWidth="0" borderColor="transparent" zPosition="10" alphatest="blend" transparent="1" />
+    <widget source="ServiceEvent" render="YouchiePoster" nexts="2" position="1019,777" size="171,228" cornerRadius="15" borderWidth="0" borderColor="transparent" zPosition="10" alphatest="blend" transparent="1" />
     <ePixmap pixmap="Youchie-PLI-FHD/screens/Poster_not_available_s.png" position="1734,777" size="171,228" cornerRadius="15" zPosition="1" alphatest="blend" />
     <ePixmap pixmap="Youchie-PLI-FHD/screens/Poster_not_available_s.png" position="1392,777" size="171,228" cornerRadius="15" zPosition="1" alphatest="blend" />
     <widget source="ServiceEvent" render="NextEpgInfo" position="848,634" size="511,142" transparent="1" timeColor="orange" foregroundColor="green" noLabel="1" noWrap="1" font="Regular;20" NumberOfItems="6" />
     <ePixmap pixmap="Youchie-PLI-FHD/screens/Poster_not_available_s.png" position="1190,777" size="171,228" cornerRadius="15" zPosition="1" alphatest="blend" />
     <ePixmap pixmap="Youchie-PLI-FHD/screens/Poster_not_available_s.png" position="848,777" size="171,228" cornerRadius="15" zPosition="1" alphatest="blend" />
-    <widget source="ServiceEvent" render="YouchiePoster" nexts="6" position="1563,777" size="171,228" cornerRadius="15" borderWidth="0" borderColor="transparent" zPosition="9" alphatest="blend" transparent="1" />
-    <widget source="ServiceEvent" render="YouchiePoster" nexts="7" position="1734,777" size="171,228" cornerRadius="15" borderWidth="0" borderColor="transparent" zPosition="9" alphatest="blend" transparent="1" />
+    <widget source="ServiceEvent" render="YouchiePoster" nexts="5" position="1563,777" size="171,228" cornerRadius="15" borderWidth="0" borderColor="transparent" zPosition="9" alphatest="blend" transparent="1" />
+    <widget source="ServiceEvent" render="YouchiePoster" nexts="6" position="1734,777" size="171,228" cornerRadius="15" borderWidth="0" borderColor="transparent" zPosition="9" alphatest="blend" transparent="1" />
     <widget alphatest="blend" render="MSNWeatherPixmap" position="1165,235" size="150,150" source="session.MSNWeather" transparent="1" zPosition="3">
       <convert type="MSNWeather">weathericon,current</convert>
     </widget>
@@ -533,7 +535,7 @@
     </widget>
   </screen>
   <screen name="Channel_Select_EPG" flags="wfNoBorder" size="1920,1081" transparent="1">
-    <widget source="ServiceEvent" render="YouchiePLIRun" options="movetype=running,startpoint=0,direction=top,steptime=1,repeat=5,startdelay=500,wrap,oneshot=1,always=0" position="1394,637" size="504,365" font="Regular; 25" backgroundColor="black" transparent="1" halign="right" valign="top" foregroundColor="sky">
+    <widget source="ServiceEvent" render="YouchiePLIRun" options="movetype=running,startpoint=0,direction=top,steptime=100,repeat=5,startdelay=500,wrap,oneshot=1,always=0" position="1394,637" size="504,365" font="Regular; 25" backgroundColor="black" transparent="1" halign="right" valign="top" foregroundColor="sky">
       <convert type="EventName">FullDescription</convert>
     </widget>
     <widget source="ServiceEvent" render="NextEpgInfo" position="851,637" size="504,365" transparent="1" timeColor="orange" foregroundColor="green" noLabel="1" noWrap="1" font="Regular;25" NumberOfItems="12" />
@@ -564,18 +566,47 @@
     <widget source="Title" render="Label" position="649,66" size="620,58" font="Core_B; 50" backgroundColor="black" transparent="1" foregroundColor="sky" valign="center" zPosition="1" halign="center" />
     <widget source="ScreenPath" render="Label" position="650,172" size="620,45" font="HelpMenuList; 30" backgroundColor="black" transparent="1" valign="center" zPosition="20" halign="center" foregroundColor="orange" />
   </screen>
-  <!-- InfoBar -->
-  <screen name="InfoBar" position="0,0" size="1920,1080" title="InfoBar" flags="wfNoBorder" backgroundColor="transparent">
-    <!-- Clock -->
-    <panel name="ClockLabe1" />
-    <!-- Poster -->
-    <ePixmap alphatest="off" pixmap="Youchie-PLI-FHD/infobar/hd.png" position="0,750" size="1920,340" zPosition="-11" />
+  <!-- CH-Number-Show-->
+  <screen name="Channels_Number_Show" flags="wfNoBorder" size="1920,1081" transparent="1">
+    <widget source="session.CurrentService" render="ChannelNumber" position="7,855" size="94,42" backgroundColor="black" foregroundColor="sky" transparent="1" zPosition="10" font="Carbon; 36" valign="top" halign="left" />
+    <widget source="session.CurrentService" render="Label" borderWidth="2" position="96,857" size="571,42" backgroundColor="black" transparent="1" zPosition="2" foregroundColor="saric" font="Roboto; 37" valign="top" halign="left" noWrap="1">
+      <convert type="YouchieServName2">Name</convert>
+    </widget>
+    <widget source="session.CurrentService" render="Label" emptyText="Servus Provider" position="550,862" size="335,36" borderWidth="5" backgroundColor="black" zPosition="1" font="Regular; 20" transparent="1" noWrap="1" halign="right" valign="bottom">
+      <convert type="YouchieServName2">Provider</convert>
+    </widget>
+  </screen>
+  <!-- CH-Number-Not-Show-->
+  <screen name="Channels_Number_Not_Show" flags="wfNoBorder" size="1920,1081" transparent="1">
     <widget source="session.CurrentService" render="Label" borderWidth="2" position="11,857" size="571,42" backgroundColor="black" transparent="1" zPosition="2" foregroundColor="saric" font="Roboto; 39" valign="top" halign="left" noWrap="1">
       <convert type="YouchieServName2">Name</convert>
     </widget>
     <widget source="session.CurrentService" render="Label" emptyText="Servus Provider" position="550,862" size="335,36" borderWidth="5" backgroundColor="black" zPosition="1" font="Regular; 22" transparent="1" noWrap="1" halign="right" valign="bottom">
       <convert type="YouchieServName2">Provider</convert>
     </widget>
+  </screen>
+  <!-- One-Poster-Infobar1-->
+  <screen name="Poster_1_Infobar1" flags="wfNoBorder" size="1920,1081" transparent="1">
+    <widget source="session.Event_Now" render="YouchiePoster" position="11,297" cornerRadius="15" size="375,500" alphatest="blend" transparent="1" zPosition="1" />
+    <widget source="session.Event_Now" font="Regular;25" position="406,417" size="978,380" render="YouchiePLIRun" options="movetype=running,direction=top,startpoint=0,startdelay=6000,wrap=1,always=0,repeat=2,oneshot=1" valign="top" halign="left" transparent="1" backgroundColor="black" foregroundColor="orange" zPosition="1">
+      <convert type="EventName">ExtendedDescription</convert>
+    </widget>
+    <widget source="session.Event_Now" render="YouchiePLIRun" options="movetype=running,startpoint=0,direction=left,steptime=1,repeat=2,startdelay=500,nowrap,oneshot=1,always=0" borderWidth="2" position="406,321" size="978,78" valign="center" halign="left" font="Regular; 38" transparent="1" backgroundColor="black" foregroundColor="sky" zPosition="1">
+      <convert type="EventName">Name</convert>
+    </widget>
+    <widget source="session.Event_Next" render="YouchiePoster" nexts="1" position="1390,569" size="171,228" cornerRadius="10" borderWidth="0" borderColor="transparent" zPosition="10" alphatest="blend" transparent="1" />
+    <widget source="session.Event_Next" render="YouchiePoster" nexts="2" position="1567,569" size="171,228" cornerRadius="10" borderWidth="0" borderColor="transparent" zPosition="10" alphatest="blend" transparent="1" />
+    <widget source="session.Event_Next" render="YouchiePoster" nexts="3" position="1744,569" size="171,228" cornerRadius="10" borderWidth="0" borderColor="transparent" zPosition="10" alphatest="blend" transparent="1" />
+  </screen>
+  <!-- InfoBar -->
+  <screen name="InfoBar" position="0,0" size="1920,1080" title="InfoBar" flags="wfNoBorder" backgroundColor="transparent">
+    <!-- Clock -->
+    <panel name="ClockLabe1" />
+    <!-- Poster -->
+    <!-- CH-Number-Not-Show -->
+    <panel name="Channels_Number_Not_Show" />
+    <!-- One-Poster-->
+    <ePixmap alphatest="off" pixmap="Youchie-PLI-FHD/infobar/hd.png" position="0,750" size="1920,340" zPosition="-11" />
     <ePixmap pixmap="Youchie-PLI-FHD/infobar/pcon.png" position="888,865" size="220,138" backgroundColor="black" alphatest="blend" zPosition="1" />
     <widget source="session.CurrentService" render="Picon" position="905,880" size="184,110" alphatest="blend" backgroundColor="secondBG" transparent="0" zPosition="8">
       <convert type="YouchieServName2">Reference</convert>
@@ -1017,13 +1048,9 @@
     <panel name="ClockLabe1" />
     <!-- EPG Infobar2 -->
     <panel name="epginfo2" />
+    <!-- CH-Number-Not-Show -->
+    <panel name="Channels_Number_Not_Show" />
     <ePixmap alphatest="off" pixmap="Youchie-PLI-FHD/infobar/hd.png" position="0,750" size="1920,340" zPosition="-11" />
-    <widget source="session.CurrentService" render="Label" borderWidth="2" position="11,857" size="571,42" backgroundColor="black" transparent="1" zPosition="2" foregroundColor="saric" font="Roboto; 39" valign="top" halign="left" noWrap="1">
-      <convert type="YouchieServName2">Name</convert>
-    </widget>
-    <widget source="session.CurrentService" render="Label" emptyText="Servus Provider" position="550,862" size="335,36" borderWidth="5" backgroundColor="black" zPosition="1" font="Regular; 22" transparent="1" noWrap="1" halign="right" valign="bottom">
-      <convert type="YouchieServName2">Provider</convert>
-    </widget>
     <ePixmap pixmap="Youchie-PLI-FHD/infobar/pcon.png" position="888,865" size="220,138" backgroundColor="black" alphatest="blend" zPosition="1" />
     <widget source="session.CurrentService" render="Picon" position="905,880" size="184,110" alphatest="blend" backgroundColor="secondBG" transparent="0" zPosition="8">
       <convert type="YouchieServName2">Reference</convert>
@@ -1759,8 +1786,8 @@ if not self["videofps"].text:
       <convert type="MenuEntryCompare">dvd_player</convert>
       <convert type="ConditionalShowHide" />
     </widget>
-    <widget source="menu" render="Pixmap" pixmap="Youchie-PLI-FHD/menu/timer.png" position="169,264" size="215,300" zPosition="3" transparent="1" alphatest="blend">
-      <convert type="MenuEntryCompare">timer_menu</convert>
+    <widget source="menu" render="Pixmap" pixmap="Youchie-PLI-FHD/menu/youchie_setup.png" position="117,267" size="310,310" zPosition="3" transparent="1" alphatest="blend">
+      <convert type="MenuEntryCompare">youchie_skin_settings</convert>
       <convert type="ConditionalShowHide" />
     </widget>
     <widget source="menu" render="Pixmap" pixmap="Youchie-PLI-FHD/menu/media_player_large.png" position="82,296" size="412,250" zPosition="3" transparent="1" alphatest="blend">
@@ -1814,6 +1841,22 @@ if not self["videofps"].text:
     </widget>
     <widget source="menu" render="Pixmap" pixmap="Youchie-PLI-FHD/menu/Levi45.png" position="135,336" size="285,164" zPosition="3" transparent="1" alphatest="blend">
       <convert type="MenuEntryCompare">Levi45 Emu Keys Updater</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Youchie-PLI-FHD/menu/XKlass.png" position="144,288" size="260,260" zPosition="3" transparent="1" alphatest="blend">
+      <convert type="MenuEntryCompare">XKlass</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Youchie-PLI-FHD/menu/JediMakerXtream.png" position="125,274" size="300,300" zPosition="3" transparent="1" alphatest="blend">
+      <convert type="MenuEntryCompare">JediMakerXtream</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Youchie-PLI-FHD/menu/linuxsat_panel.png" position="121,263" size="300,300" zPosition="3" transparent="1" alphatest="blend">
+      <convert type="MenuEntryCompare">Linuxsat-Support.com (Addons Panel)</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Youchie-PLI-FHD/menu/E2iPlayer.png" position="83,260" size="320,320" zPosition="3" transparent="1" alphatest="blend">
+      <convert type="MenuEntryCompare">iptv_main</convert>
       <convert type="ConditionalShowHide" />
     </widget>
   </screen>
@@ -2075,7 +2118,7 @@ if not self["videofps"].text:
       <convert type="MenuEntryCompare">logs_menu</convert>
       <convert type="ConditionalShowHide" />
     </widget>
-    <widget source="menu" render="Pixmap" pixmap="Youchie-PLI-FHD/menu/softwear_update.png" position="146,287" size="250,252" zPosition="10" transparent="1" alphatest="blend">
+    <widget source="menu" render="Pixmap" pixmap="Youchie-PLI-FHD/menu/softwear_update.png" position="146,287" size="250,252" zPosition="3" transparent="1" alphatest="blend">
       <convert type="MenuEntryCompare">softwareupdatemenu</convert>
       <convert type="ConditionalShowHide" />
     </widget>
@@ -2093,6 +2136,14 @@ if not self["videofps"].text:
     </widget>
     <widget source="menu" render="Pixmap" pixmap="Youchie-PLI-FHD/menu/factrest.png" position="132,274" size="280,283" zPosition="3" transparent="1" alphatest="blend">
       <convert type="MenuEntryCompare">factory_reset</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Youchie-PLI-FHD/menu/netmounts_setup.png" position="173,288" size="199,280" zPosition="3" transparent="1" alphatest="blend">
+      <convert type="MenuEntryCompare">mountpoints_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Youchie-PLI-FHD/menu/E2iPlayer_Config.png" position="121,272" size="300,300" zPosition="3" transparent="1" alphatest="blend">
+      <convert type="MenuEntryCompare">iptv_config</convert>
       <convert type="ConditionalShowHide" />
     </widget>
   </screen>
@@ -7223,24 +7274,27 @@ if self.type == self.TYPE_YESNO:
   </applet>
   </screen>
   <screen name="YoutubeTVWindow" position="547,357" size="825,365" zPosition="1" title="Start YouTube TV" backgroundColor="transparent" alphatest="on" flags="wfNoBorder">
-    <ePixmap pixmap="Youchie-PLI-FHD/screens/youtube_tv_window_bag.png" position="0,0" size="825,365" alphatest="off" zPosition="-2" />
-    <widget name="infomation" position="6,76" size="810,120" valign="center" halign="center" font="Regular; 30" zPosition="1" transparent="1" foregroundColor="orange" />
-    <widget name="startdesc" position="6,217" size="593,60" valign="center" font="Regular; 30" transparent="1" zPosition="1" />
-    <widget name="helpdesc" position="6,293" size="593,60" valign="center" font="Regular; 30" transparent="1" zPosition="1" />
-    <ePixmap pixmap="Youchie-PLI-FHD/buttons/key_green.png" position="600,228" size="52,37" alphatest="on" zPosition="5" />
-    <ePixmap pixmap="Youchie-PLI-FHD/buttons/key_yellow.png" position="600,303" size="52,37" alphatest="on" zPosition="5" />
-    <widget source="key_green" render="Label" position="652,229" size="173,37" zPosition="5" font="Regular; 30" halign="center" backgroundColor="black" transparent="1" foregroundColor="green" />
-    <widget source="key_yellow" render="Label" position="652,303" zPosition="5" size="173,37" font="Regular; 30" halign="center" valign="center" backgroundColor="black" transparent="1" foregroundColor="yellow" />
-    <eLabel text="Start YouTube TV" position="6,4" size="811,65" font="Replacement; 32" borderWidth="1" backgroundColor="black" transparent="1" zPosition="1" halign="center" noWrap="1" valign="center" />
+    <ePixmap pixmap="Youchie-PLI-FHD/screens/youtube_tv_window_bag.png" position="0,0" size="825,366" alphatest="off" zPosition="-2" />
+    <widget name="infomation" position="6,71" size="810,102" valign="center" halign="center" font="Regular; 30" zPosition="1" transparent="1" backgroundColor="black" foregroundColor="orange" />
+    <widget name="startdesc" position="6,172" size="593,60" valign="center" font="Regular; 30" backgroundColor="black" transparent="1" zPosition="1" />
+    <widget name="helpdesc" position="6,298" size="593,60" valign="center" font="Regular; 30" backgroundColor="black" transparent="1" zPosition="1" />
+    <ePixmap pixmap="Youchie-PLI-FHD/buttons/key_green.png" position="600,183" size="52,37" alphatest="on" zPosition="5" />
+    <ePixmap pixmap="Youchie-PLI-FHD/buttons/key_yellow.png" position="600,308" size="52,37" alphatest="on" zPosition="5" />
+    <widget source="key_green" render="Label" position="652,184" size="173,37" zPosition="5" font="Regular; 30" halign="center" backgroundColor="black" transparent="1" foregroundColor="green" />
+    <widget source="key_yellow" render="Label" position="652,308" zPosition="5" size="173,37" font="Regular; 30" halign="center" valign="center" backgroundColor="black" transparent="1" foregroundColor="yellow" />
+    <eLabel text="Start YouTube TV" position="1,4" size="823,65" font="Replacement; 32" borderWidth="1" backgroundColor="black" transparent="1" zPosition="1" halign="center" noWrap="1" valign="center" />
+    <widget source="key_blue" render="Label" position="652,247" size="173,37" zPosition="5" font="Regular; 30" halign="center" backgroundColor="black" transparent="1" foregroundColor="blue2" />
+    <ePixmap pixmap="Youchie-PLI-FHD/buttons/key_blue.png" position="600,247" size="52,37" alphatest="on" zPosition="5" />
+    <widget name="settingdesc" position="6,235" size="593,60" valign="center" font="Regular; 30" backgroundColor="black" transparent="1" zPosition="1" />
   </screen>
-  <screen name="YoutubeTVSettings" position="547,357" size="825,365" zPosition="1" title="YouTube TV Settings" backgroundColor="transparent" alphatest="on" flags="wfNoBorder">
+  <screen name="YoutubeTVSettings" position="500,357" size="920,365" zPosition="1" title="YouTube TV Settings" backgroundColor="transparent" alphatest="on" flags="wfNoBorder">
     <ePixmap pixmap="Youchie-PLI-FHD/screens/youtube_tv_settings_bag.png" position="0,0" size="920,365" alphatest="off" zPosition="-2" />
-    <widget name="config" position="10,90" size="900,189" itemHeight="38" selectionPixmap="Youchie-PLI-FHD/selections/Youchie_lansel_FHD.png" font="Regular; 28" scrollbarMode="showOnDemand" scrollbarBackgroundPicture="Youchie-PLI-FHD/frame/scrollbar_bg.png" scrollbarWidth="7" scrollbarSliderBorderWidth="0" scrollbarKeepGapColor="1" scrollbarGap="5" scrollbarSliderForegroundColor="orange" scrollbarSliderBorderColor="background" foregroundColorSelected="orange" backgroundColorSelected="background" />
-    <ePixmap pixmap="Youchie-PLI-FHD/buttons/key_red.png" position="287,315" size="52,37" alphatest="on" zPosition="5" />
+    <widget name="config" position="5,98" size="908,185" itemHeight="37" backgroundColor="black" selectionPixmap="Youchie-PLI-FHD/selections/Youchie_lansel_FHD.png" font="Regular; 25" scrollbarMode="showOnDemand" scrollbarBackgroundPicture="Youchie-PLI-FHD/frame/scrollbar_bg.png" scrollbarWidth="7" scrollbarSliderBorderWidth="0" scrollbarKeepGapColor="1" scrollbarGap="5" scrollbarSliderForegroundColor="orange" scrollbarSliderBorderColor="background" foregroundColorSelected="orange" backgroundColorSelected="background" transparent="1" />
+    <ePixmap pixmap="Youchie-PLI-FHD/buttons/key_red.png" position="277,315" size="52,37" alphatest="on" zPosition="5" />
     <ePixmap pixmap="Youchie-PLI-FHD/buttons/key_green.png" position="571,315" size="52,37" alphatest="on" zPosition="5" />
-    <widget source="key_red" render="Label" position="60,315" zPosition="5" size="210,37" font="Regular; 30" halign="right" valign="center" backgroundColor="black" transparent="1" foregroundColor="red" />
+    <widget source="key_red" render="Label" position="61,315" zPosition="5" size="210,37" font="Regular; 30" halign="right" valign="center" backgroundColor="black" transparent="1" foregroundColor="red" />
     <widget source="key_green" render="Label" position="629,315" zPosition="5" size="210,37" font="Regular; 30" halign="left" valign="center" backgroundColor="black" transparent="1" foregroundColor="green" />
-    <eLabel text="YouTube TV Settings" position="7,3" size="904,65" font="Replacement; 32" borderWidth="1" backgroundColor="black" transparent="1" zPosition="1" halign="center" noWrap="1" valign="center" />
+    <eLabel text="YouTube TV Settings" position="1,4" size="916,65" font="Replacement; 32" borderWidth="1" backgroundColor="black" transparent="1" zPosition="1" halign="center" noWrap="1" valign="center" />
   </screen>
   <screen name="QuickbuttonSetup" position="0,0" size="1920,1080" title="QuickbuttonSetup" backgroundColor="transparent" flags="wfNoBorder">
     <!-- Clock -->
@@ -7425,27 +7479,26 @@ if self.type == self.TYPE_YESNO:
     <panel name="Date4" />
     <ePixmap pixmap="Youchie-PLI-FHD/screens/screen_04_smal.png" position="0,0" size="1920,1080" alphatest="off" zPosition="-2" />
     <ePixmap position="1270,55" size="100,99" zPosition="3" pixmap="Youchie-PLI-FHD/screens/dev_mount_smal.png" alphatest="blend" transparent="1" />
-    <widget source="Title" render="Label" position="580,68" size="787,66" font="Core_B; 40" backgroundColor="black" transparent="1" foregroundColor="sky" valign="center" zPosition="1" halign="center" />
+    <widget source="Title" render="Label" position="580,68" size="787,66" font="Core_B; 38" backgroundColor="black" transparent="1" foregroundColor="sky" valign="center" zPosition="1" halign="center" />
     <ePixmap position="174,296" size="199,280" zPosition="3" pixmap="Youchie-PLI-FHD/screens/hdd_mount.png" alphatest="blend" transparent="1" />
     <!-- buttons_key_MOD -->
     <panel name="buttons_key_MOD" />
-    <ePixmap pixmap="Youchie-PLI-FHD/buttons/key_menu.png" position="163,810" size="52,37" alphatest="blend" />
-    <widget name="key_menu" pixmap="Youchie-PLI-FHD/buttons/key_menu.png" position="163,810" zPosition="10" size="52,37" font="Regular; 28" halign="left" valign="center" transparent="1" backgroundColor="black" />
-    <widget source="list" render="Listbox" position="592,174" size="767,721" selectionPixmap="Youchie-PLI-FHD/selections/Youchie_lansel_FHD.png" transparent="1" scrollbarMode="showOnDemand" scrollbarBackgroundPicture="Youchie-PLI-FHD/frame/scrollbar_bg.png" scrollbarWidth="7" scrollbarSliderBorderWidth="0" scrollbarKeepGapColor="1" scrollbarGap="5" scrollbarSliderForegroundColor="orange" scrollbarSliderBorderColor="background" foregroundColorSelected="orange" backgroundColorSelected="background">
+    <ePixmap pixmap="Youchie-PLI-FHD/buttons/key_menu.png" position="163,810" zPosition="10" size="52,37" alphatest="off" />
+    <widget source="list" render="Listbox" position="591,204" size="767,707" selectionPixmap="Youchie-PLI-FHD/selections/Youchie_lansel_FHD.png" transparent="1" scrollbarMode="showOnDemand" scrollbarBackgroundPicture="Youchie-PLI-FHD/frame/scrollbar_bg.png" scrollbarWidth="7" scrollbarSliderBorderWidth="0" scrollbarKeepGapColor="1" scrollbarGap="5" scrollbarSliderForegroundColor="orange" scrollbarSliderBorderColor="background" foregroundColorSelected="orange" backgroundColorSelected="background">
       <convert type="TemplatedMultiContent">
         {
             "template": [
-                MultiContentEntryText(pos = (135, 0), size = (720, 45), color = 0x0058bcff, color_sel = 0x00ffc000, font=0, text = 0),
-                MultiContentEntryText(pos = (165, 45), size = (900, 75), font=1, flags = RT_VALIGN_TOP, text = 1),
+                MultiContentEntryText(pos = (1, 8), size = (721, 45), color = 0x0000FF00, color_sel = 0x0000FF00, font=0, flags = RT_HALIGN_CENTER | RT_VALIGN_CENTER, text = 0),
+                MultiContentEntryText(pos = (125, 55), size = (900, 75), font=1, flags = RT_VALIGN_TOP, text = 1),
                 MultiContentEntryText(pos = (870, 0), size = (120, 27), font=2, color = 0x00999999, color_sel = 0x00999999, flags = RT_VALIGN_CENTER, text = 3),
                 MultiContentEntryPixmapAlphaBlend(pos = (5, 31), size = (80, 80), png = 2),
             ],
-            "fonts": [gFont("Regular", 36), gFont("Regular", 32), gFont("Regular", 30)],
-            "itemHeight": 143
+            "fonts": [gFont("Regular", 30), gFont("Regular", 23), gFont("Regular", 23)],
+            "itemHeight": 120
         }
     </convert>
     </widget>
-    <widget name="lab1" zPosition="2" position="592,476" size="767,75" font="Regular; 34" halign="center" transparent="1" backgroundColor="black" foregroundColor="orange" />
+    <widget name="lab1" zPosition="2" position="591,506" size="767,75" font="Regular; 34" halign="center" transparent="1" backgroundColor="black" foregroundColor="orange" />
     <eLabel name="" position="159,795" size="60,67" backgroundColor="cyan2" zPosition="-1" />
   </screen>
   <screen name="DeviceMountPanelConf" position="0,0" size="1920,1080" title="Setup Mounts" backgroundColor="transparent" flags="wfNoBorder">
@@ -7461,8 +7514,8 @@ if self.type == self.TYPE_YESNO:
     <ePixmap position="174,296" size="199,280" zPosition="3" pixmap="Youchie-PLI-FHD/screens/hdd_mount.png" alphatest="blend" transparent="1" />
     <!-- buttons_key_MOD -->
     <panel name="buttons_key_MOD" />
-    <widget name="config" position="592,215" size="767,450" itemHeight="45" selectionPixmap="Youchie-PLI-FHD/selections/Youchie_lansel_FHD.png" transparent="1" backgroundColor="black" font="Regular; 30" scrollbarMode="showOnDemand" scrollbarBackgroundPicture="Youchie-PLI-FHD/frame/scrollbar_bg.png" scrollbarWidth="7" scrollbarSliderBorderWidth="0" scrollbarKeepGapColor="1" scrollbarGap="5" scrollbarSliderForegroundColor="orange" scrollbarSliderBorderColor="background" foregroundColorSelected="orange" backgroundColorSelected="background" />
-    <widget name="Linconn" position="592,841" size="767,38" font="Regular; 28" halign="center" valign="center" backgroundColor="un9f1313" />
+    <widget name="config" position="589,203" size="772,595" itemHeight="45" selectionPixmap="Youchie-PLI-FHD/selections/Youchie_lansel_FHD.png" transparent="1" backgroundColor="black" font="Regular; 21" scrollbarMode="showOnDemand" scrollbarBackgroundPicture="Youchie-PLI-FHD/frame/scrollbar_bg.png" scrollbarWidth="7" scrollbarSliderBorderWidth="0" scrollbarKeepGapColor="1" scrollbarGap="5" scrollbarSliderForegroundColor="orange" scrollbarSliderBorderColor="background" foregroundColorSelected="orange" backgroundColorSelected="background" />
+    <widget name="Linconn" position="589,840" size="772,38" font="TextNormal" halign="center" valign="center" backgroundColor="un9f1313" />
   </screen>
   <screen name="StreamingClientsInfo" position="0,0" size="1920,1080" title="Streaming Clients Info" backgroundColor="transparent" flags="wfNoBorder">
     <!-- Clock -->
@@ -7968,9 +8021,7 @@ if self.type == self.TYPE_YESNO:
     <!-- Date Labels4 -->
     <panel name="Date4" />
     <ePixmap pixmap="Youchie-PLI-FHD/screens/screen_04_smal.png" position="0,0" size="1920,1080" alphatest="off" zPosition="-2" />
-    <widget name="config" font="Regular; 22" position="592,225" size="764,301" transparent="1" backgroundColor="background" itemHeight="42" zPosition="10" selectionPixmap="Youchie-PLI-FHD/selections/Youchie_lansel_FHD.png" scrollbarMode="showOnDemand" enableWrapAround="1" scrollbarBackgroundPicture="Youchie-PLI-FHD/frame/scrollbar_bg.png" scrollbarWidth="7" scrollbarSliderBorderWidth="0" scrollbarKeepGapColor="1" scrollbarGap="5" scrollbarSliderForegroundColor="orange" scrollbarSliderBorderColor="background" itemCornerRadius="8" foregroundColorSelected="orange" backgroundColorSelected="background" />
-    <widget name="city" font="Regular; 26" position="935,793" size="420,35" foregroundColor="red" backgroundColor="black" transparent="1" zPosition="4" halign="center" valign="bottom" />
-    <widget name="helpText" font="Regular; 22" position="592,760" size="764,30" foregroundColor="ffffff" backgroundColor="black" transparent="1" zPosition="2" halign="left" valign="center" />
+    <widget name="config" font="Regular; 22" position="592,225" size="764,462" transparent="1" backgroundColor="background" itemHeight="42" zPosition="10" selectionPixmap="Youchie-PLI-FHD/selections/Youchie_lansel_FHD.png" scrollbarMode="showOnDemand" enableWrapAround="1" scrollbarBackgroundPicture="Youchie-PLI-FHD/frame/scrollbar_bg.png" scrollbarWidth="7" scrollbarSliderBorderWidth="0" scrollbarKeepGapColor="1" scrollbarGap="5" scrollbarSliderForegroundColor="orange" scrollbarSliderBorderColor="background" itemCornerRadius="8" foregroundColorSelected="orange" backgroundColorSelected="background" />
     <!-- Cancel button -->
     <ePixmap position="642,862" size="52,37" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/YouchieSettings/img/key_red.png" alphatest="blend" zPosition="1" />
     <eLabel font="Regular; 24" foregroundColor="red" halign="left" position="700,866" size="120,33" text="Cancel" zPosition="1" transparent="1" />
@@ -7980,7 +8031,7 @@ if self.type == self.TYPE_YESNO:
     <ePixmap position="1265,57" size="101,93" zPosition="3" pixmap="Youchie-PLI-FHD/screens/text_box.png" alphatest="blend" transparent="1" />
     <ePixmap position="136,291" size="280,280" zPosition="3" pixmap="Youchie-PLI-FHD/screens/youchie_setup.png" alphatest="blend" transparent="1" />
     <widget source="Title" render="Label" position="575,68" size="792,66" font="Core_B; 40" backgroundColor="black" transparent="1" foregroundColor="sky" valign="center" zPosition="1" halign="center" />
-    <eLabel name="" position="592,181" size="764,32" text=" #.............................................. { Poster Setup } ..............................................#" backgroundColor="dark" font="Regular; 20" transparent="1" zPosition="1" halign="left" foregroundColor="orange" />
+    <eLabel name="" position="592,181" size="764,32" text=" #.............................................. { Skin Settings } ..............................................#" backgroundColor="dark" font="Regular; 20" transparent="1" zPosition="1" halign="left" foregroundColor="orange" />
   </screen>
   <screen name="OpenBhImageManager" position="0,0" size="1920,1080" title="ImageBackup" backgroundColor="transparent" flags="wfNoBorder">
     <!-- Clock -->
@@ -8251,7 +8302,7 @@ if self.type == self.TYPE_YESNO:
     <!-- Date Labels4 -->
     <panel name="Date4" />
     <ePixmap pixmap="Youchie-PLI-FHD/screens/HistoryZapSelector.png" position="286,81" size="1300,720" alphatest="off" zPosition="-2" />
-    <widget source="menu" render="Listbox" position="296,94" size="1280,700" colorAdditionalInfo="green" colorAdditionalInfoSelected="hellgreen" foregroundColorServiceNotAvail="green" colorServiceDescription="green" colorServiceDescriptionSelected="sky" foregroundColor="white" foregroundColorSelected="orange" serviceItemHeight="45" serviceNumberFont="tiny;27" serviceNameFont="tiny;26" serviceInfoFont="Regular_I;23" colorEventProgressbarBorderSelected="cyan1" colorEventProgressbarBorder="cyan1" picServiceEventProgressbar="Youchie-PLI-FHD/chnsel/pl.png" selectionPixmap="Youchie-PLI-FHD/selections/Hzap_select.png" zPosition="4" transparent="1" backgroundColor="background" halign="block" progressPercentWidth="40" scrollbarMode="showOnDemand" scrollbarBackgroundPicture="Youchie-PLI-FHD/frame/scrollbar_bg.png" scrollbarWidth="7" scrollbarSliderBorderWidth="0" scrollbarKeepGapColor="1" scrollbarGap="5" scrollbarSliderForegroundColor="orange" scrollbarSliderBorderColor="background" fieldMargins="15" nonplayableMargins="15" progressbarHeight="6" progressBarWidth="60" progressbarBorderWidth="1" backgroundColorMarked="background" textSeparator="  •  " markerLine="1" markerTextAlignment="center" markerLineColor="sky" itemCornerRadius="10">
+    <widget source="menu" render="Listbox" position="296,94" size="1280,700" colorAdditionalInfo="green" colorAdditionalInfoSelected="hellgreen" foregroundColorServiceNotAvail="green" colorServiceDescription="green" colorServiceDescriptionSelected="sky" foregroundColor="white" foregroundColorSelected="orange" serviceItemHeight="45" serviceNumberFont="Youchietiny;27" serviceNameFont="Youchietiny;26" serviceInfoFont="Regular_I;23" colorEventProgressbarBorderSelected="cyan1" colorEventProgressbarBorder="cyan1" picServiceEventProgressbar="Youchie-PLI-FHD/chnsel/pl.png" zPosition="4" transparent="1" backgroundColor="background" halign="block" progressPercentWidth="40" scrollbarMode="showOnDemand" scrollbarBackgroundPicture="Youchie-PLI-FHD/frame/scrollbar_bg.png" scrollbarWidth="7" scrollbarSliderBorderWidth="0" scrollbarKeepGapColor="1" scrollbarGap="5" scrollbarSliderForegroundColor="orange" scrollbarSliderBorderColor="background" fieldMargins="15" nonplayableMargins="15" progressbarHeight="6" progressBarWidth="60" progressbarBorderWidth="1" backgroundColorMarked="background" textSeparator="  •  " markerLine="1" markerTextAlignment="center" markerLineColor="sky" itemCornerRadius="10">
       <convert type="TemplatedMultiContent">
 {
   "template": [
@@ -8671,7 +8722,7 @@ if self.type == self.TYPE_YESNO:
     <widget source="Title" render="Label" position="32,65" size="1325,86" font="Core_B; 40" backgroundColor="black" transparent="1" foregroundColor="sky" valign="center" zPosition="1" halign="center" />
     <!-- buttons_key_MOD -->
     <panel name="buttons_key_MOD" />
-    <widget name="list" position="43,179" size="1289,811" colorAdditionalInfo="green" colorAdditionalInfoSelected="hellgreen" foregroundColorServiceNotAvail="green" colorServiceDescription="green" colorServiceDescriptionSelected="sky" foregroundColor="white" foregroundColorSelected="orange" serviceItemHeight="45" serviceNumberFont="tiny;27" serviceNameFont="tiny;26" serviceInfoFont="Regular_I;23" colorEventProgressbarBorderSelected="cyan1" colorEventProgressbarBorder="cyan1" picServiceEventProgressbar="Youchie-PLI-FHD/chnsel/pl.png" selectionPixmap="Youchie-PLI-FHD/selections/listsel1289.png" zPosition="4" transparent="1" backgroundColor="background" halign="block" progressPercentWidth="40" scrollbarMode="showOnDemand" scrollbarBackgroundPicture="Youchie-PLI-FHD/frame/scrollbar_bg.png" scrollbarWidth="7" scrollbarSliderBorderWidth="0" scrollbarKeepGapColor="1" scrollbarGap="5" scrollbarSliderForegroundColor="orange" scrollbarSliderBorderColor="background" fieldMargins="15" nonplayableMargins="15" progressbarHeight="6" progressBarWidth="60" progressbarBorderWidth="1" backgroundColorMarked="background" textSeparator="  •  " markerLine="1" markerTextAlignment="center" markerLineColor="sky" itemCornerRadius="10" />
+    <widget name="list" position="43,179" size="1289,811" colorAdditionalInfo="green" colorAdditionalInfoSelected="hellgreen" foregroundColorServiceNotAvail="green" colorServiceDescription="green" colorServiceDescriptionSelected="sky" foregroundColor="white" foregroundColorSelected="orange" serviceItemHeight="45" serviceNumberFont="Youchietiny;27" serviceNameFont="Youchietiny;26" serviceInfoFont="Regular_I;23" colorEventProgressbarBorderSelected="cyan1" colorEventProgressbarBorder="cyan1" picServiceEventProgressbar="Youchie-PLI-FHD/chnsel/pl.png" selectionPixmap="Youchie-PLI-FHD/selections/listsel1289.png" zPosition="4" transparent="1" backgroundColor="background" halign="block" progressPercentWidth="40" scrollbarMode="showOnDemand" scrollbarBackgroundPicture="Youchie-PLI-FHD/frame/scrollbar_bg.png" scrollbarWidth="7" scrollbarSliderBorderWidth="0" scrollbarKeepGapColor="1" scrollbarGap="5" scrollbarSliderForegroundColor="orange" scrollbarSliderBorderColor="background" fieldMargins="15" nonplayableMargins="15" progressbarHeight="6" progressBarWidth="60" progressbarBorderWidth="1" backgroundColorMarked="background" textSeparator="  •  " markerLine="1" markerTextAlignment="center" markerLineColor="sky" itemCornerRadius="10" />
     <widget name="textChannels" position="1370,261" size="510,51" font="Regular;30" backgroundColor="black" transparent="1" />
     <widget name="selectedList" position="1370,334" size="510,200" font="Regular;28" itemHeight="40" selectionPixmap="Youchie-PLI-FHD/selections/Youchie_lansel_FHD.png" backgroundColor="black" enableWrapAround="1" scrollbarBackgroundPicture="Youchie-PLI-FHD/frame/scrollbar_bg.png" scrollbarWidth="7" scrollbarSliderBorderWidth="0" scrollbarKeepGapColor="1" scrollbarGap="5" scrollbarSliderForegroundColor="orange" scrollbarSliderBorderColor="background" foregroundColorSelected="orange" backgroundColorSelected="background" zPosition="0" />
     <widget name="description" position="1370,560" size="510,280" font="Regular;28" halign="left" foregroundColor="orange" backgroundColor="black" transparent="1" />
@@ -9544,18 +9595,22 @@ MultiContentEntryText(pos=(210,0), size=(205, 30), text = 2, flags = RT_HALIGN_R
     <widget source="title" render="Label" position="580,68" size="787,66" font="Core_B; 40" backgroundColor="black" transparent="1" foregroundColor="sky" valign="center" zPosition="1" halign="center" />
     <!-- buttons_key_MOD -->
     <panel name="buttons_key_MOD" />
-    <widget source="list" render="Listbox" position="593,173" size="758,674" font="Regular; 30" itemHeight="140" selectionPixmap="Youchie-PLI-FHD/selections/Youchie_lansel_FHD.png" backgroundColor="black" enableWrapAround="1" scrollbarBackgroundPicture="Youchie-PLI-FHD/frame/scrollbar_bg.png" scrollbarWidth="7" scrollbarSliderBorderWidth="0" scrollbarKeepGapColor="1" scrollbarGap="5" scrollbarSliderForegroundColor="orange" scrollbarSliderBorderColor="background" foregroundColorSelected="orange" backgroundColorSelected="background" zPosition="0" transparent="1">
+    <widget source="list" render="Listbox" position="591,204" size="767,707" selectionPixmap="Youchie-PLI-FHD/selections/Youchie_lansel_FHD.png" transparent="1" scrollbarMode="showOnDemand" scrollbarBackgroundPicture="Youchie-PLI-FHD/frame/scrollbar_bg.png" scrollbarWidth="7" scrollbarSliderBorderWidth="0" scrollbarKeepGapColor="1" scrollbarGap="5" scrollbarSliderForegroundColor="orange" scrollbarSliderBorderColor="background" foregroundColorSelected="orange" backgroundColorSelected="background" font="Regular;30" itemHeight="120" enableWrapAround="1" zPosition="1">
       <convert type="TemplatedMultiContent">
-				{"template": [
-				 MultiContentEntryText(pos = (20, 5),  size = (700, 40), font=0, text = 0),
-				 MultiContentEntryText(pos = (100, 50), size = (700, 80), font=1, flags = RT_VALIGN_CENTER, text = 1) ],
-				"fonts": [gFont("Regular", 36),gFont("Regular", 30)],
-				"itemHeight": 140
-				}
-			</convert>
+        {
+            "template": [
+                MultiContentEntryText(pos = (1, 8), size = (721, 45), color = 0x0000FF00, color_sel = 0x0000FF00, font=0, flags = RT_HALIGN_CENTER | RT_VALIGN_CENTER, text = 0),
+                MultiContentEntryText(pos = (10, 55), size = (740, 60), font=1, flags = RT_HALIGN_LEFT | RT_VALIGN_TOP, text = 1)
+            ],
+            "fonts": [gFont("Regular", 30), gFont("Regular", 23)],
+            "itemHeight": 120
+        }
+    </convert>
     </widget>
-    <widget name="lab1" zPosition="2" position="593,855" size="758,60" font="Regular;28" halign="center" transparent="1" foregroundColor="orange" />&gt;
-<ePixmap position="136,332" size="300,192" zPosition="3" pixmap="Youchie-PLI-FHD/menu/device_manager.png" alphatest="blend" transparent="1" /><ePixmap position="1265,57" size="101,93" zPosition="3" pixmap="Youchie-PLI-FHD/screens/text_box.png" alphatest="blend" transparent="1" /></screen>
+    <widget name="lab1" zPosition="2" position="591,506" size="767,75" font="Regular; 34" halign="center" transparent="1" backgroundColor="black" foregroundColor="orange" />
+    <ePixmap position="136,332" size="300,192" zPosition="3" pixmap="Youchie-PLI-FHD/menu/device_manager.png" alphatest="blend" transparent="1" />
+    <ePixmap position="1265,57" size="101,93" zPosition="3" pixmap="Youchie-PLI-FHD/screens/text_box.png" alphatest="blend" transparent="1" />
+  </screen>
   <screen name="DeliteSetupDevicePanelConf" position="0,0" size="1920,1080" title="Devices Mountpoints Setup" backgroundColor="transparent" flags="wfNoBorder">
     <!-- Clock -->
     <panel name="ClockLabe1" />
@@ -9565,12 +9620,14 @@ MultiContentEntryText(pos=(210,0), size=(205, 30), text = 2, flags = RT_HALIGN_R
     <panel name="Date4" />
     <ePixmap pixmap="Youchie-PLI-FHD/screens/screen_04_smal.png" position="0,0" size="1920,1080" alphatest="off" zPosition="-2" />
     <ePixmap position="1265,57" size="101,93" zPosition="3" pixmap="Youchie-PLI-FHD/screens/text_box.png" alphatest="blend" transparent="1" />
-    <widget source="Title" render="Label" position="580,68" size="787,66" font="Core_B; 40" backgroundColor="black" transparent="1" foregroundColor="sky" valign="center" zPosition="1" halign="center" />
+    <widget source="Title" render="Label" position="574,68" size="793,66" font="Core_B; 40" backgroundColor="black" transparent="1" foregroundColor="sky" valign="center" zPosition="1" halign="center" />
     <ePixmap position="174,296" size="199,280" zPosition="3" pixmap="Youchie-PLI-FHD/screens/hdd_mount.png" alphatest="blend" transparent="1" />
     <!-- buttons_key_MOD -->
     <panel name="buttons_key_MOD" />
-    <widget name="config" position="592,172" size="767,660" itemHeight="45" selectionPixmap="Youchie-PLI-FHD/selections/Youchie_lansel_FHD.png" transparent="1" backgroundColor="black" font="Regular; 28" scrollbarMode="showOnDemand" scrollbarBackgroundPicture="Youchie-PLI-FHD/frame/scrollbar_bg.png" scrollbarWidth="7" scrollbarSliderBorderWidth="0" scrollbarKeepGapColor="1" scrollbarGap="5" scrollbarSliderForegroundColor="orange" scrollbarSliderBorderColor="background" foregroundColorSelected="orange" backgroundColorSelected="background" />
-    <widget name="Linconn" position="592,846" size="767,69" font="Regular; 28" halign="center" valign="center" backgroundColor="un9f1313" />
+    <widget name="config" position="589,203" size="772,595" itemHeight="45" selectionPixmap="Youchie-PLI-FHD/selections/Youchie_lansel_FHD.png" transparent="1" backgroundColor="black" font="Regular; 21" scrollbarMode="showOnDemand" scrollbarBackgroundPicture="Youchie-PLI-FHD/frame/scrollbar_bg.png" scrollbarWidth="7" scrollbarSliderBorderWidth="0" scrollbarKeepGapColor="1" scrollbarGap="5" scrollbarSliderForegroundColor="orange" scrollbarSliderBorderColor="background" foregroundColorSelected="orange" backgroundColorSelected="background" />
+    <widget name="Linconn" position="589,840" size="772,38" font="TextNormal" halign="center" valign="center" backgroundColor="un9f1313" />
+    <ePixmap pixmap="Youchie-PLI-FHD/buttons/key_menu.png" position="163,810" zPosition="10" size="52,37" alphatest="off" />
+    <eLabel name="" position="159,795" size="60,67" backgroundColor="cyan2" zPosition="-1" />
   </screen>
   <screen name="Nab_debOut" position="459,140" size="1002,799" zPosition="1" title="Black Hole Message" backgroundColor="transparent" alphatest="on" flags="wfNoBorder">
     <ePixmap pixmap="Youchie-PLI-FHD/screens/Message_bag.png" position="0,0" size="1002,798" alphatest="off" zPosition="-2" />
