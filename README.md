@@ -7,7 +7,7 @@ Download Releases v1.0.2
       ::
       \/
       
-[Skin Youchie-PLI-FHD For OpenPLI And OpenBH Image Vu+ v1.0.1](https://github.com/smcam/enigma2/releases/tag/v1.0.2)
+[Skin Youchie-PLI-FHD For OpenPLI And OpenBH Image Vu+ v1.0.2](https://github.com/smcam/enigma2/releases/tag/v1.0.2)
 
 🚀 Skin Youchie-PLI-FHD v1.0.2 - For OpenPLI And OpenBH Image Vu+
 
